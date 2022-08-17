@@ -5,7 +5,7 @@ exports[`renders correctly 1`] = `
   <h1
     className="text-3xl"
   >
-    Hello 
+    Hello
     John Doe
   </h1>
 </header>
