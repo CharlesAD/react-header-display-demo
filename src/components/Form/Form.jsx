@@ -5,6 +5,7 @@ export default function Form({ setName }) {
     event.preventDefault();
 
     const submission = Object.fromEntries(new FormData(event.target));
+
     setName(submission.name);
 
     event.target.reset();
