@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<ul>
+  <li>
+    Test 1
+     - 
+    $49.99
+  </li>
+  <li>
+    Test 2
+     - 
+    $9.99
+  </li>
+  <li>
+    Test 3
+     - 
+    $29.99
+  </li>
+</ul>
+`;
