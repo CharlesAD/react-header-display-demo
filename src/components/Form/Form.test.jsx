@@ -12,12 +12,17 @@ import Form from "./Form";
  */
 
 it("renders without crashing", () => {
-  const rendered = renderer.create(<Form />).toJSON();
+  const rendered = renderer.create(<Form setName={() => {}} />).toJSON();
   expect(rendered).toMatchSnapshot();
 });
 
 it("Confirms that setName function is called whenever the form is submitted", () => {
-  const setName = jest.fn();
+  const handleSubmit = jest.fn();
 
-  render(<Form userEvent.click(screen.getByRole('button')));
+  render(<Form setName={handleSubmit} />);
+  const submitBtn = screen.getByRole("button", { name: /submit/i });
+
+  userEvent.click(submitBtn);
+
+  expect(handleSubmit).toHaveBeenCalled();
 });

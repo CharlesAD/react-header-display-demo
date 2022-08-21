@@ -29,6 +29,7 @@ export default function Form({ setName }) {
       <button
         type="submit"
         className="flex justify-center bg-purple-500 px-4 py-2 text-white"
+        label = "submit"
       >
         Submit
       </button>
