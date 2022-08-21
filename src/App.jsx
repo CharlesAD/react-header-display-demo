@@ -41,7 +41,7 @@ const products = [
 ];
 
 function App() {
-  const [name, setName] = useState(null);
+  const [name, setName] = useState({ name: "" });
 
   return (
     <>

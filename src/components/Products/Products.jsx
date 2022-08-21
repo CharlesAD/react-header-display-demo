@@ -8,6 +8,21 @@ function createProductLIs(productsData) {
   ));
 }
 
+const products = [
+  {
+    price: "$49.99",
+    name: "Test 1",
+  },
+  {
+    price: "$9.99",
+    name: "Test 2",
+  },
+  {
+    price: "$29.99",
+    name: "Test 3",
+  },
+];
+
 export default function Products({ products }) {
   return <ul>{createProductLIs(products)}</ul>;
 }

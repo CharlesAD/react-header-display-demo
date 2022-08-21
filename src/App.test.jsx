@@ -19,14 +19,7 @@ it("renders without crashing", () => {
 it("Get by label text and submits the form", () => {
   render(<App />);
   const rendered = renderer.create(<App />).toJSON();
-  const input = screen.getByLabelText("name");
-});
 
-it("tests whether 'hello' is in the document", () => {
-  render(<App />);
-
-  const input = screen.getByLabelText(/name/i);
+  const input = screen.getByLabelText("submit");
   userEvent.type(input, "Charles");
-
-  expect(screen.getByLabelText('Name')).toBeInTheDocument());
 });
