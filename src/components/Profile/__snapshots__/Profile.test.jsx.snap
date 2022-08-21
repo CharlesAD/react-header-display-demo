@@ -2,6 +2,8 @@
 
 exports[`renders without crashing 1`] = `
 <img
+  alt="Charles"
   className="mx-auto w-24 items-center rounded-full pb-4"
+  src="someImage.jpg"
 />
 `;

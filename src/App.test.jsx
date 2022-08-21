@@ -2,7 +2,6 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import renderer from "react-test-renderer";
 import App from "./App";
-import Form from "./components/Form/Form";
 
 /**
  * TODO:
@@ -16,10 +15,21 @@ it("renders without crashing", () => {
   expect(rendered).toMatchSnapshot();
 });
 
-it("Get by label text and submits the form", () => {
-  render(<App />);
-  const rendered = renderer.create(<App />).toJSON();
+it("displays the name and profile whenever we submit the form", () => {
+  const nameInput = "Charles AD";
 
-  const input = screen.getByLabelText("submit");
-  userEvent.type(input, "Charles");
+  render(<App />);
+
+  const h1 = screen.getByRole("heading", { level: 1 });
+  const input = screen.getByLabelText(/name/i);
+  const submitBtn = screen.getByRole("button", { name: /submit/i });
+
+  userEvent.type(input, nameInput);
+  userEvent.click(submitBtn);
+
+  const h2 = screen.getByRole("heading", { level: 1 });
+  screen.getByAltText(nameInput);
+
+  expect(h1.textContent).toContain(nameInput);
+  expect(h2.textContent).toContain(nameInput);
 });
